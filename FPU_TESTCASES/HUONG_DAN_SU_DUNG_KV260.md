@@ -34,7 +34,7 @@ FPU  base = 0xA0001000
 Chay tren PowerShell/CMD cua Windows:
 
 ```powershell
-scp -r "C:\Users\VJU-HMinh\Documents\Codex\2026-05-23\files-mentioned-by-the-user-fdiv\FPU_KV260_TESTCASES_FIXED_20260603" debian@172.16.16.49:/home/debian/VJU_HK2_2026/
+scp -r "nhap duong dan file o day" debian@172.16.16.49:/home/debian/VJU_HK2_2026/
 ```
 
 Neu board co IP khac, thay `172.16.16.49` bang IP cua board.
@@ -236,13 +236,4 @@ Dia chi dung voi code hien tai:
 ```text
 fdiv_axi_lite_0   0xA0000000
 fpu_axi_wrapper_0 0xA0001000
-```
-
-## 9. Cau ket luan bao cao
-
-```text
-The FPU bitstream was loaded onto the KV260 FPGA through Linux FPGA Manager.
-The ARM processor accessed the FPU hardware through AXI memory-mapped
-registers. Addition, subtraction, multiplication, and division were verified
-successfully with 24/24 hardware test cases passing.
 ```

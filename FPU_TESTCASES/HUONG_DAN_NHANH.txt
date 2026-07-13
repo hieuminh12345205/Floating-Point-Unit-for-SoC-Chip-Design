@@ -1,0 +1,74 @@
+HUONG DAN NHANH CHAY FPU TREN KV260
+===================================
+
+1) SSH vao board:
+
+ssh debian@172.16.16.49
+
+2) Vao thu muc:
+
+cd ~/VJU_HK2_2026/FPU_KV260_TESTCASES_FIXED_20260603
+
+3) Cap quyen script:
+
+chmod +x load_bitstream.sh run_ac4_40ps.sh run_ac4_4ops.sh run_interactive.sh
+
+4) Nap bitstream vao FPGA:
+
+./load_bitstream.sh
+cat /sys/class/fpga_manager/fpga0/state
+
+Can thay:
+
+operating
+
+5) Chay 24 testcases cho 4 phep:
+
+./run_ac4_40ps.sh all
+
+Ket qua dung:
+
+ADD PASS=6 FAIL=0
+SUB PASS=6 FAIL=0
+MUL PASS=6 FAIL=0
+DIV PASS=6 FAIL=0
+
+6) Chay tung phep:
+
+./run_ac4_40ps.sh add
+./run_ac4_40ps.sh sub
+./run_ac4_40ps.sh mul
+./run_ac4_40ps.sh div
+
+7) Chay chuong trinh nhap so:
+
+./run_interactive.sh
+
+Nhap vi du:
+
+A = 10
+Operation (+ - * /, q to quit) = /
+B = 4
+
+Ket qua:
+
+HW: 10 / 4 = 2.5
+
+Co the nhap dau cham hoac dau phay: 0.1 hoac 0,1.
+
+8) Neu muon compile thu cong:
+
+gcc -O0 -g -Wall -Wextra -std=c11 -o KV260_FPU_TESTCASES KV260_FPU_TESTCASES.c
+sudo ./KV260_FPU_TESTCASES all
+
+gcc -O0 -g -Wall -Wextra -std=c11 -o KV260_FPU KV260_FPU.c
+sudo ./KV260_FPU
+
+9) Neu gap loi /dev/mem Permission denied:
+
+Hay chay bang sudo, vi chuong trinh can truy cap thanh ghi FPGA qua /dev/mem.
+
+10) Dia chi IP:
+
+FDIV base = 0xA0000000
+FPU  base = 0xA0001000

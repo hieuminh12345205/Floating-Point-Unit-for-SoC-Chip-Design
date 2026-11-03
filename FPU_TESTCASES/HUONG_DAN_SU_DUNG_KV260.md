@@ -34,7 +34,7 @@ FPU  base = 0xA0001000
 Chay tren PowerShell/CMD cua Windows:
 
 ```powershell
-scp -r "nhap duong dan file o day" debian@172.16.16.49:/home/debian/VJU_HK2_2026/
+scp -r "nhap duong dan file o day" debian@172.16.16.49:/home/debian/VJU_HK2_2026/ (day la duong dan vi du co tren board, hay thay duong dan tuy vao tinh hinh thuc te)
 ```
 
 Neu board co IP khac, thay `172.16.16.49` bang IP cua board.
@@ -237,3 +237,4 @@ Dia chi dung voi code hien tai:
 fdiv_axi_lite_0   0xA0000000
 fpu_axi_wrapper_0 0xA0001000
 ```
+Luu y: Huong dan su dung chi mang tinh chat tham khao, luu y hay chinh sua truoc khi su dung

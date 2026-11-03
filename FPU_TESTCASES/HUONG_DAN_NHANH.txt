@@ -72,3 +72,4 @@ Hay chay bang sudo, vi chuong trinh can truy cap thanh ghi FPGA qua /dev/mem.
 
 FDIV base = 0xA0000000
 FPU  base = 0xA0001000
+Luu y: File huong dan nhanh cung chi mang tinh chat tham khao
